@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.ts" type="module"></script>
+    <title>Tamagotchi</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <article class="panel-left">
+        <div class="stats">
+          <div><h3 id="name"></h3></div>
+          <div><h4 id="happiness"></h4></div>
+          <div><h4 id="hunger"></h4></div>
+        </div>
+      </article>
+      <article class="article gamewindow">
+        <div id="title"><h1>Tamagotchi</h1></div>
+        <div class="tamagotchi">
+          <div class="poopimage hidden">
+            <img class="poop" src="./img/poo.png" />
+          </div>
+          <div id="tamaimg"></div>
+          <div class="hungerimage hidden">
+            <img class="mood" src="./img/hungry.png" />
+          </div>
+        </div>
+      </article>
+      <article class="article playbuttons">
+        <button class="playbtn" value="eat">
+          <p>FEED</p>
+          <img class="playimg" src="./img/healthy-eating.png" />
+        </button>
+        <button class="playbtn" value="play">
+          <p>PLAY</p>
+          <img class="playimg" src="./img/play-with-pet.png" />
+        </button>
+        <button class="playbtn" value="scoop">
+          <p>SCOOP</p>
+          <img class="playimg" src="./img/poop-bag.png" />
+        </button>
+        <button class="playbtn" value="restart">
+          <p>RESTART</p>
+          <img class="playimg" src="./img/refresh.png" />
+        </button>
+      </article>
+      <article class="panel-right">
+        <div class="stats">
+          <div><p>Rules: Keep pet happy by feeding & playing with it</p></div>
+          <div>
+            <p>
+              If you play to hard: Hunger increases <br />
+              (10 sec timer)
+            </p>
+          </div>
+          <div>
+            <p>
+              If you feed it to much: Happiness decreases <br />
+              (10 sec timer)
+            </p>
+          </div>
+          <div>
+            <p>
+              Forget to pick up poop?: Happiness decreases <br />
+              (4 sec timer)
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
+  </body>
+</html>

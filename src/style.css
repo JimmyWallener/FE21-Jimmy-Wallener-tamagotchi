@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  height: 100vh;
+  background-image: url('./img/endless-constellation.svg');
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    'header header header header'
+    '. main main .'
+    'footer footer footer footer';
+}
+main {
+  display: grid;
+  grid-area: main;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: 80vh;
+  width: 100vh;
+  border-radius: 5rem;
+  grid-template-columns: 10vw 40vw 40vw 10vw;
+  grid-template-areas:
+    'panel-left gamewindow panel-right'
+    'panel-left gamewindow panel-right'
+    'panel-left gamewindow panel-right'
+    'panel-left gamewindow panel-right'
+    'panel-left button-panel panel-right';
+}
+header {
+  grid-area: header;
+}
+.panel-left {
+  grid-area: panel-left;
+  max-width: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rem 0 0 5rem;
+}
+.stats {
+  margin-top: 2rem;
+}
+.stats div {
+  padding: 0.5rem;
+}
+.panel-right {
+  grid-area: panel-right;
+  max-width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 0 5rem 5rem 0;
+}
+.gamewindow {
+  grid-area: gamewindow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 40vw;
+  max-height: 100vh;
+}
+.gamewindow h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+  letter-spacing: 0.6em;
+  text-shadow: 2px 2px #76777a;
+}
+.playbuttons {
+  grid-area: button-panel;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40vw;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+}
+.tamagotchi {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  max-width: 40vw;
+}
+.poop {
+  margin-top: 9vh;
+}
+.mood {
+  position: relative;
+  right: 0.5vw;
+}
+.playbtn {
+  padding: 14px;
+  background-color: white;
+  border-radius: 3rem;
+  margin-left: 2em;
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.33);
+}
+
+.playbtn:hover {
+  box-shadow: 5px 5px 5px 1px rgba(83, 79, 79, 0.5);
+}
+.playbtn p {
+  margin-bottom: 0.5em;
+}
+
+footer {
+  grid-area: footer;
+}
+.panel-left,
+.panel-right,
+.article {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 16px 15px 17px 1px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: 16px 15px 17px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 16px 15px 17px 1px rgba(0, 0, 0, 0.33);
+}
+
+.hidden {
+  visibility: hidden;
+}
