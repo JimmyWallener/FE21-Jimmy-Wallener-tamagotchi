@@ -12,7 +12,7 @@ import Tamagotchi from './Tamagotchi';
     const image = document.createElement('img');
     setName.innerHTML = `Name: ${name}<br /> Type: ${type} `;
 
-    image.setAttribute('src', `./img/pets/${name}.png`);
+    image.setAttribute('src', `./img/${name}.png`);
     image.setAttribute('alt', `${name}`);
     setTamaImage.append(image);
 

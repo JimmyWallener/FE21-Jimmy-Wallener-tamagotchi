@@ -2,10 +2,11 @@
   "name": "tamagotchi",
   "version": "1.0.0",
   "description": "",
+  "source": "src/index.html",
   "scripts": {
-    "dev": "parcel ./src/index.html",
+    "dev": "parcel",
     "clean": "del-cli ./dist ./.parcel-cache",
-    "build": "parcel build ./src/index.html --public-url ./"
+    "build": "parcel build src/index.html"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,7 @@
     "del-cli": "^4.0.1",
     "parcel": "^2.3.2"
   },
-  "browserlist": [
+  "browserslist": [
     "Firefox>95",
     "Chrome>95"
   ]
