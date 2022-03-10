@@ -1,7 +1,7 @@
-### Tamagochi game
+# Tamagochi game
 
-# npm install for node
+### npm install for node
 
-# npm run dev for server
+### npm run dev for server
 
-# npm run clean to remove cache + dist files
+### npm run clean to remove cache + dist files
