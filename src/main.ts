@@ -11,9 +11,8 @@ import Tamagotchi from './Tamagotchi';
     const setTamaImage = document.getElementById('tamaimg');
     const image: HTMLImageElement = document.createElement('img');
     setName.innerHTML = `Name: ${name}<br /> Type: ${type} `;
-    const petURL = new URL(`./img/${name}.png`, import.meta.url);
-    console.log(petURL);
-    image.src = petURL.href;
+
+    image.src = `./img/pets/${name}.png`;
     image.setAttribute('alt', `${name}`);
     setTamaImage.append(image);
 
@@ -24,7 +23,7 @@ import Tamagotchi from './Tamagotchi';
       } else {
         setHappiness.innerHTML = `Happiness: Dead`;
         setHunger.innerHTML = `Hunger: Dead`;
-        image.src = new URL('./img/skull.png', import.meta.url).href;
+        image.src = './img/skull.png';
         image.setAttribute('alt', 'Dead');
         clearInterval(refresh);
       }
