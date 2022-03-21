@@ -4,26 +4,26 @@ import Tamagotchi from './Tamagotchi';
   const pet = new Tamagotchi();
 
   const populateStats = (): void => {
-    const { name, type } = pet.pet;
+    const { name, type } = pet.getPet();
     const setName = document.getElementById('name');
     const setHappiness = document.getElementById('happiness');
     const setHunger = document.getElementById('hunger');
     const setTamaImage = document.getElementById('tamaimg');
-    const image = document.createElement('img');
+    const image: HTMLImageElement = document.createElement('img');
     setName.innerHTML = `Name: ${name}<br /> Type: ${type} `;
 
-    image.setAttribute('src', `./img/${name}.png`);
+    image.src = new URL(`img/pets/${name}.png`, import.meta.url).href;
     image.setAttribute('alt', `${name}`);
     setTamaImage.append(image);
 
     const updateStats = (): void => {
-      if (pet.isPetAlive === true) {
-        setHappiness.innerHTML = `Happiness: ${pet.happiness}`;
-        setHunger.innerHTML = `Hunger: ${pet.hunger}`;
+      if (pet.isPetAlive() === true) {
+        setHappiness.innerHTML = `Happiness: ${pet.getHappiness()}`;
+        setHunger.innerHTML = `Hunger: ${pet.getHunger()}`;
       } else {
         setHappiness.innerHTML = `Happiness: Dead`;
         setHunger.innerHTML = `Hunger: Dead`;
-        image.setAttribute('src', './img/skull.png');
+        image.src = new URL('img/skull.png', import.meta.url).href;
         image.setAttribute('alt', 'Dead');
         clearInterval(refresh);
       }
@@ -57,17 +57,17 @@ import Tamagotchi from './Tamagotchi';
     });
 
     const scoopPoop = (): void => {
-      pet.PoopBool = true;
+      pet.setPoopBool(true);
     };
 
     const addPoop = (): void => {
-      pet.PoopBool = false;
+      pet.setPoopBool(false);
       const poopImage = document.querySelector('.poopimage');
       poopImage.classList.toggle('hidden');
 
       const addOne = (): void => {
         const poopImage = document.querySelector('.poopimage');
-        if (pet.isPoopgone) {
+        if (pet.isPoopgone()) {
           clearTimeout(add);
           poopImage.classList.toggle('hidden');
         } else {

@@ -112,25 +112,25 @@ export default class Tamagotchi {
       this.hungry++;
     }
   }
-  get happiness(): number {
+  getHappiness(): number {
     return this.happy;
   }
-  get hunger(): number {
+  getHunger(): number {
     return this.hungry;
   }
-  get pet(): Animal {
+  getPet(): Animal {
     return this.type[Math.round(Math.random() * 12)];
   }
-  get isPetAlive(): boolean {
+  isPetAlive(): boolean {
     return this.isAlive;
   }
   lowerJoy(): void {
     this.happy--;
   }
-  get isPoopgone(): boolean {
+  isPoopgone(): boolean {
     return this.isPoopGone;
   }
-  set PoopBool(bool: boolean) {
+  setPoopBool(bool: boolean) {
     this.isPoopGone = bool;
   }
 }
